@@ -1,0 +1,12 @@
+[urls]
+default = http://topface-mobile:Sonetica2012@l10n.topface.com/
+
+[translation]
+project = Pull-To-Refresh
+format = androidxml
+source_locale = en
+
+[androidxml]
+resource_dir = res
+pattern = pull_refresh_strings*
+
