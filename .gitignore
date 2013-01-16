@@ -27,3 +27,5 @@ proguard.cfg
 
 #OSX
 .DS_Store
+
+localist.db
