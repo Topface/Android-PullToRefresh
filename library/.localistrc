@@ -1,6 +1,6 @@
 [project]
 name = Pull-To-Refresh
-language = ru
+language = en
 format = androidxml
 
 [translation]
