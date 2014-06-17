@@ -99,6 +99,8 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 
 	private SmoothScrollRunnable mCurrentSmoothScrollRunnable;
 
+    private boolean mSizeChanged;
+
 	// ===========================================================
 	// Constructors
 	// ===========================================================
@@ -864,9 +866,20 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 				requestLayout();
 			}
 		});
+
+        mSizeChanged = true;
 	}
 
-	/**
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        if (!mSizeChanged) {
+            super.onLayout(changed, l, t, r, b);
+        } else {
+            mSizeChanged = false;
+        }
+    }
+
+    /**
 	 * Re-measure the Loading Views height, and adjust internal padding as
 	 * necessary
 	 */
