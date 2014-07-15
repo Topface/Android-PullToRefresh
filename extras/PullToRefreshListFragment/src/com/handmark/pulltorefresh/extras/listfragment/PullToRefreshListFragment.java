@@ -19,7 +19,7 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.topface.PullToRefreshListView;
 
 /**
  * A sample implementation of how to use {@link PullToRefreshListView} with

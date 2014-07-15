@@ -16,9 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.topface.PullToRefreshBase;
+import com.topface.PullToRefreshBase.OnRefreshListener;
+import com.topface.PullToRefreshListView;
 
 public class PullToRefreshListInViewPagerActivity extends Activity implements OnRefreshListener<ListView> {
 

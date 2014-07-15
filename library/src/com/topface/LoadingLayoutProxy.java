@@ -1,11 +1,11 @@
-package com.handmark.pulltorefresh.library;
+package com.topface;
 
 import java.util.HashSet;
 
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
-import com.handmark.pulltorefresh.library.internal.LoadingLayout;
+import com.topface.internal.LoadingLayout;
 
 public class LoadingLayoutProxy implements ILoadingLayout {
 

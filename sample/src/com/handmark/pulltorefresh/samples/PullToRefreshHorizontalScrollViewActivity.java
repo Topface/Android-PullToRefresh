@@ -20,9 +20,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.HorizontalScrollView;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView;
+import com.topface.PullToRefreshBase;
+import com.topface.PullToRefreshBase.OnRefreshListener;
+import com.topface.PullToRefreshHorizontalScrollView;
 
 public final class PullToRefreshHorizontalScrollViewActivity extends Activity {
 

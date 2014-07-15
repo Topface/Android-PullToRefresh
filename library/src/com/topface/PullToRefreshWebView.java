@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.handmark.pulltorefresh.library;
+package com.topface;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -24,6 +24,8 @@ import android.util.AttributeSet;
 import android.util.FloatMath;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+
+import com.handmark.pulltorefresh.library.R;
 
 public class PullToRefreshWebView extends PullToRefreshBase<WebView> {
 

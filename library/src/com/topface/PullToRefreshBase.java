@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.handmark.pulltorefresh.library;
+package com.topface;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -34,11 +34,12 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.handmark.pulltorefresh.library.internal.FlipLoadingLayout;
-import com.handmark.pulltorefresh.library.internal.LoadingLayout;
-import com.handmark.pulltorefresh.library.internal.RotateLoadingLayout;
-import com.handmark.pulltorefresh.library.internal.Utils;
-import com.handmark.pulltorefresh.library.internal.ViewCompat;
+import com.handmark.pulltorefresh.library.R;
+import com.topface.internal.FlipLoadingLayout;
+import com.topface.internal.LoadingLayout;
+import com.topface.internal.RotateLoadingLayout;
+import com.topface.internal.Utils;
+import com.topface.internal.ViewCompat;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout implements IPullToRefresh<T> {
 

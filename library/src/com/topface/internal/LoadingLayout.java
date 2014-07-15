@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.handmark.pulltorefresh.library.internal;
+package com.topface.internal;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -35,9 +35,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.handmark.pulltorefresh.library.ILoadingLayout;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.Orientation;
+import com.topface.ILoadingLayout;
+import com.topface.PullToRefreshBase.Mode;
+import com.topface.PullToRefreshBase.Orientation;
 import com.handmark.pulltorefresh.library.R;
 
 @SuppressLint("ViewConstructor")
