@@ -35,10 +35,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.handmark.pulltorefresh.library.R;
 import com.topface.ILoadingLayout;
 import com.topface.PullToRefreshBase.Mode;
 import com.topface.PullToRefreshBase.Orientation;
-import com.handmark.pulltorefresh.library.R;
 
 @SuppressLint("ViewConstructor")
 public abstract class LoadingLayout extends FrameLayout implements ILoadingLayout {
@@ -75,9 +75,13 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 				break;
 			case VERTICAL:
 			default:
-				LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_vertical, this);
-				break;
-		}
+                if (attrs.getBoolean(R.styleable.PullToRefresh_ptrHideTextInVerticalMode, false)) {
+                    LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_vertical_no_text, this);
+                } else {
+                    LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_vertical, this);
+                }
+                break;
+        }
 
 		mInnerLayout = (FrameLayout) findViewById(R.id.fl_inner);
 		mHeaderText = (TextView) mInnerLayout.findViewById(R.id.pull_to_refresh_text);
@@ -181,15 +185,15 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 	}
 
 	public final void setHeight(int height) {
-		ViewGroup.LayoutParams lp = (ViewGroup.LayoutParams) getLayoutParams();
-		lp.height = height;
-		requestLayout();
+        ViewGroup.LayoutParams lp = getLayoutParams();
+        lp.height = height;
+        requestLayout();
 	}
 
 	public final void setWidth(int width) {
-		ViewGroup.LayoutParams lp = (ViewGroup.LayoutParams) getLayoutParams();
-		lp.width = width;
-		requestLayout();
+        ViewGroup.LayoutParams lp = getLayoutParams();
+        lp.width = width;
+        requestLayout();
 	}
 
 	public final int getContentSize() {
@@ -203,19 +207,19 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 	}
 
 	public final void hideAllViews() {
-		if (View.VISIBLE == mHeaderText.getVisibility()) {
-			mHeaderText.setVisibility(View.INVISIBLE);
-		}
-		if (View.VISIBLE == mHeaderProgress.getVisibility()) {
-			mHeaderProgress.setVisibility(View.INVISIBLE);
-		}
-		if (View.VISIBLE == mHeaderImage.getVisibility()) {
-			mHeaderImage.setVisibility(View.INVISIBLE);
-		}
-		if (View.VISIBLE == mSubHeaderText.getVisibility()) {
-			mSubHeaderText.setVisibility(View.INVISIBLE);
-		}
-	}
+        if (mHeaderText != null && View.VISIBLE == mHeaderText.getVisibility()) {
+            mHeaderText.setVisibility(View.INVISIBLE);
+        }
+        if (mHeaderProgress != null && View.VISIBLE == mHeaderProgress.getVisibility()) {
+            mHeaderProgress.setVisibility(View.INVISIBLE);
+        }
+        if (mHeaderImage != null && View.VISIBLE == mHeaderImage.getVisibility()) {
+            mHeaderImage.setVisibility(View.INVISIBLE);
+        }
+        if (mSubHeaderText != null && View.VISIBLE == mSubHeaderText.getVisibility()) {
+            mSubHeaderText.setVisibility(View.INVISIBLE);
+        }
+    }
 
 	public final void onPull(float scaleOfLayout) {
 		if (!mUseIntrinsicAnimation) {
@@ -312,19 +316,19 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 	}
 
 	public final void showInvisibleViews() {
-		if (View.INVISIBLE == mHeaderText.getVisibility()) {
-			mHeaderText.setVisibility(View.VISIBLE);
-		}
-		if (View.INVISIBLE == mHeaderProgress.getVisibility()) {
-			mHeaderProgress.setVisibility(View.VISIBLE);
-		}
-		if (View.INVISIBLE == mHeaderImage.getVisibility()) {
-			mHeaderImage.setVisibility(View.VISIBLE);
-		}
-		if (View.INVISIBLE == mSubHeaderText.getVisibility()) {
-			mSubHeaderText.setVisibility(View.VISIBLE);
-		}
-	}
+        if (mHeaderText != null && View.INVISIBLE == mHeaderText.getVisibility()) {
+            mHeaderText.setVisibility(View.VISIBLE);
+        }
+        if (mHeaderProgress != null && View.INVISIBLE == mHeaderProgress.getVisibility()) {
+            mHeaderProgress.setVisibility(View.VISIBLE);
+        }
+        if (mHeaderImage != null && View.INVISIBLE == mHeaderImage.getVisibility()) {
+            mHeaderImage.setVisibility(View.VISIBLE);
+        }
+        if (mSubHeaderText != null && View.INVISIBLE == mSubHeaderText.getVisibility()) {
+            mSubHeaderText.setVisibility(View.VISIBLE);
+        }
+    }
 
 	/**
 	 * Callbacks for derivative Layouts
