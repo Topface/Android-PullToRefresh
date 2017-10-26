@@ -1,0 +1,8 @@
+android {
+    buildToolsVersion "26.0.2"
+    buildTypes {
+        release {}
+        debug {}
+        qa {}
+    }
+}
