@@ -1,8 +1,11 @@
 android {
-    buildToolsVersion "26.0.2"
+    buildToolsVersion "28.0.3"
     buildTypes {
         release {}
         debug {}
         qa {}
+    }
+    defaultConfig {
+        minSdkVersion = 15
     }
 }
